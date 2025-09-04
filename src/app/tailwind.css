@@ -1,0 +1,79 @@
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-thm: #180cb2;
+
+    /* Fonts */
+    --font-noto: var(--font-noto-sans-thaana);
+
+    /* Spacing */
+    --spacing-base: 1rem;
+
+    /* Custom Screens */
+    --breakpoint-xxs: 350px;
+    --breakpoint-xs: 400px;
+    --breakpoint-sm: 480px;
+    --breakpoint-xmd: 600px;
+    --breakpoint-md: 768px;
+    --breakpoint-xlg: 800px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl-mini: 1440px;
+    --breakpoint-2xl: 1536px;
+
+    /* Shadows */
+    --shadow-df: 0 4px 45px #180cb208;
+    --shadow-base: 0px 12px 58.5px 0px #42388610;
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+    .site-width {
+        @apply px-6 md:px-8 lg:px-24 max-w-[1700px] mx-auto;
+    }
+
+    .site-width-sm {
+        @apply px-6 md:px-8 lg:px-24 max-w-[1350px] 2xl:px-0 2xl:max-w-[1320px] mx-auto;
+    }
+
+    .h1-tag {
+        @apply text-[32px] sm:text-[38px] md:text-[45px] xl:text-[54px] 2xl:text-[65px] font-bold leading-tight;
+    }
+
+    .h2-tag {
+        @apply text-[28px] sm:text-[36px] xl:text-[42px] 2xl:text-[50px] font-bold leading-tight;
+    }
+
+    .h3-tag {
+        @apply text-[24px] sm:text-[30px] xl:text-[36px] 2xl:text-[45px] font-bold leading-tight;
+    }
+
+    .h4-tag {
+        @apply text-[20px] lg:text-[26px] font-semibold leading-tight;
+    }
+
+    .p-tag {
+        @apply text-[18px] xl:text-lg 2xl:text-[24px] font-[500] leading-tight;
+    }
+
+    .btn {
+        @apply bg-thm text-white px-5 py-3 rounded-full mt-12 flex gap-5 self-center items-center whitespace-nowrap text-[18px] md:text-[20px]
+    }
+}
